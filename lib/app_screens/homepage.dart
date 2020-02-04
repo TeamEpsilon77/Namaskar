@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/setting.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -16,80 +17,75 @@ Widget body() {
         Container(
             padding: EdgeInsets.all(8.0),
             margin: EdgeInsets.all(5.0),
-          decoration:BoxDecoration(
-              color: Colors.indigo,
-              borderRadius: BorderRadius.circular(15.0)
-          ),
+            decoration: BoxDecoration(
+                color: Colors.indigo,
+                borderRadius: BorderRadius.circular(15.0)),
             child: Column(
-          children: <Widget>[
-            Container(
-                padding: EdgeInsets.all(3.0),
-                color: Colors.indigo,
-                child: Text(
-                  "Falgun 2076",
-                  style: TextStyle(fontSize: 25.0, color: Colors.white),
-                )
-            ),
-            Container(padding: EdgeInsets.all(3.0),
-                color: Colors.indigo,
-                child: Text(
-                  "18",
-                  style: TextStyle(fontSize: 60.0, color: Colors.white),
-                )),
-            Container(padding: EdgeInsets.all(3.0),
-                color: Colors.indigo,
-                child: Text(
-                  "Saturday",
-                  style: TextStyle(fontSize: 25.0, color: Colors.white),
-                )),
-            Container(padding: EdgeInsets.all(3.0),
-                color: Colors.indigo,
-                child: Text(
-                  "February 1, 2020",
-                  style: TextStyle(fontSize: 20.0, color: Colors.white),
-                )),
-
-          ],
-        )),
-        Expanded(
-
-            child: Container(
-                child:Column(
               children: <Widget>[
                 Container(
-                  child:
-                  Text(
+                    padding: EdgeInsets.all(3.0),
+                    color: Colors.indigo,
+                    child: Text(
+                      "Falgun 2076",
+                      style: TextStyle(fontSize: 25.0, color: Colors.white),
+                    )),
+                Container(
+                    padding: EdgeInsets.all(3.0),
+                    color: Colors.indigo,
+                    child: Text(
+                      "18",
+                      style: TextStyle(fontSize: 60.0, color: Colors.white),
+                    )),
+                Container(
+                    padding: EdgeInsets.all(3.0),
+                    color: Colors.indigo,
+                    child: Text(
+                      "Saturday",
+                      style: TextStyle(fontSize: 25.0, color: Colors.white),
+                    )),
+                Container(
+                    padding: EdgeInsets.all(3.0),
+                    color: Colors.indigo,
+                    child: Text(
+                      "February 1, 2020",
+                      style: TextStyle(fontSize: 20.0, color: Colors.white),
+                    )),
+              ],
+            )),
+        Expanded(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  child: Text(
                     'Today,it\'s',
                     style: TextStyle(fontSize: 25.0, color: Colors.black),
                   ),
-
                 ),
-                Container(child:
-                Text(
-                  '"Maghi"',
-                  style: TextStyle(fontSize: 50.0, color: Colors.black),textAlign: TextAlign.center,
-                ),
-
+                Container(
+                  child: Text(
+                    '"Maghi"',
+                    style: TextStyle(fontSize: 50.0, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
                 )
               ],
-            ), ),
+            ),
+          ),
         ),
-
-    ],
-  )
-        ),
+      ],
+    )),
     Container(
       padding: EdgeInsets.all(10.0),
-        child:
-          Text(
-              '"Welcome to Lalitpur"',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            textAlign: TextAlign.center,
-            ),
+      child: Text(
+        '"Welcome to Lalitpur"',
+        style: TextStyle(
+          fontSize: 40.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        textAlign: TextAlign.center,
+      ),
     ),
   ]);
   return column;
@@ -134,65 +130,70 @@ class EventsAndPlaces extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: upComing.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                    margin: EdgeInsets.all(10.0),
-                    width: 200.0,
-                    child: Stack(
-                      alignment: Alignment.topCenter,
-                      children: <Widget>[
-                        Positioned(
-                          bottom: 10.0,
-                          child: Container(
-                              height: 160.0,
-                              width: 200.0,
+                return GestureDetector(
+                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=> ContainerOfSetting(),)),
+                    child: Container(
+                        margin: EdgeInsets.all(10.0),
+                        width: 200.0,
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: <Widget>[
+                            Positioned(
+                              bottom: 10.0,
+                              child: Container(
+                                  height: 160.0,
+                                  width: 200.0,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius:
+                                          BorderRadius.circular(10.0)),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: <Widget>[
+                                        Text(
+                                          upComing[index].name,
+                                          style: TextStyle(
+                                            color: Colors.blueGrey,
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ),
+                            Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10.0)
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[ Text(
-                                    upComing[index].name,
-                                    style: TextStyle(
-                                      color: Colors.blueGrey,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0.0, 2.0),
+                                        blurRadius: 6.0)
+                                  ]),
+                              child: Stack(
+                                children: <Widget>[
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Image(
+                                      height: 180.0,
+                                      width: 180.0,
+                                      image:
+                                          AssetImage(upComing[index].imageUrl),
+                                      fit: BoxFit.cover,
                                     ),
-                                  ),
-                                  ],
-                                ),
-                              )
-                          ),
-                        ),
-
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20.0),
-                              boxShadow: [BoxShadow(
-                                  color: Colors.black26,
-                                  offset: Offset(0.0, 2.0),
-                                  blurRadius: 6.0
-                              )
-                              ]
-                          ),
-                          child: Stack(
-                            children: <Widget>[
-                              Image(
-                                height: 180.0,
-                                width: 180.0,
-                                image: AssetImage(upComing[index].imageUrl),
-                                fit: BoxFit.cover,
+                                  )
+                                ],
                               ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
-                );
-              },
+                            ),
+                          ],
+                        )
+                  )
+                  );
+                },
             ),
           ),
           Padding(
@@ -227,7 +228,9 @@ class EventsAndPlaces extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: upComing.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
+                return GestureDetector(
+                 onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>ContainerOfSetting())),
+                  child: Container(
                     margin: EdgeInsets.all(10.0),
                     width: 200.0,
                     child: Stack(
@@ -240,50 +243,51 @@ class EventsAndPlaces extends StatelessWidget {
                               width: 200.0,
                               decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10.0)
-                              ),
+                                  borderRadius: BorderRadius.circular(10.0)),
                               child: Padding(
                                 padding: EdgeInsets.all(5.0),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[ Text(
-                                    near[index].name,
-                                    style: TextStyle(
-                                      color: Colors.blueGrey,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
+                                  children: <Widget>[
+                                    Text(
+                                      near[index].name,
+                                      style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
-                                  ),
                                   ],
                                 ),
-                              )
-                          ),
+                              )),
                         ),
-
                         Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20.0),
-                              boxShadow: [BoxShadow(
-                                  color: Colors.black26,
-                                  offset: Offset(0.0, 2.0),
-                                  blurRadius: 6.0
-                              )
-                              ]
-                          ),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black26,
+                                    offset: Offset(0.0, 2.0),
+                                    blurRadius: 6.0)
+                              ]),
                           child: Stack(
                             children: <Widget>[
-                              Image(
-                                height: 180.0,
-                                width: 180.0,
-                                image: AssetImage(near[index].imageUrl),
-                                fit: BoxFit.cover,
-                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20.0),
+                                child: Image(
+                                  height: 180.0,
+                                  width: 200.0,
+                                  image: AssetImage(near[index].imageUrl),
+                                  fit: BoxFit.cover,
+                                ),
+                              )
                             ],
                           ),
                         ),
                       ],
-                    )
+                )
+                  ),
                 );
               },
             ),

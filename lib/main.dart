@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:namaskar_app/app_screens/homepage.dart';
 import "./app_screens/setting.dart";
@@ -11,7 +10,6 @@ void main() {
     debugShowCheckedModeBanner: false,
     title: "Namaskar",
     home: Scaffold(
-
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.account_circle),
@@ -50,11 +48,7 @@ void main() {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
         onTap: (int value) {
-          setState(() {
-            _currentTab = value;
-          });
         },
-
         items: [
           BottomNavigationBarItem(
             icon: Icon(
@@ -77,7 +71,6 @@ void main() {
             ),
             title: SizedBox.shrink(),
           ),
-
         ],
       ),
     ),
