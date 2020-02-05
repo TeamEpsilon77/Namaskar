@@ -20,19 +20,53 @@ class SettingsState extends State<Settings>{
     return Scaffold(
         body:ListView(
           children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.account_circle),onTap: ()=>Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PersonalInfo()),
-            ),
-              title: Text("Personal Information"),
-              subtitle: Text("personalize your profile."),
+            Column(
+                children: <Widget>[
+                 Center(child:Container(
+                   width: 200,
+                   height: 200,
+                   child: CircleAvatar(
+                     radius: 80.0,
+                     backgroundImage:
+                     AssetImage("images/Holi.jpg"),
+                   ),
+                 )
+                 ) ,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 13.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Sandip Puri',
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.edit,
+                          ),
+                          iconSize: 25.0,
+                          color: Colors.blueGrey,
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_)=>PersonalInfo()));
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ]
             ),
             Divider(
               height: 1.0,
               indent: 1.0,
               color: Colors.black,
             ),
+
 
             ListTile(
               leading: Icon(Icons.share),onTap: ()=>Navigator.push(

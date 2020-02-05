@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:namaskar_app/app_screens/bookmark_screen.dart';
+import 'package:namaskar_app/app_screens/event_model.dart';
 import 'package:namaskar_app/app_screens/home_screen.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';
+import 'package:namaskar_app/app_screens/notification_screen.dart';
+import 'package:namaskar_app/holi.dart';
+
 
 int _currentTab = 0;
 final tabs=[
-  Home(),EventsAndPlaces()
+  ListView(
+    children: <Widget>[
+      Home(),EventsAndPlaces()
+    ],
+  ),
+  HomeScreen(),
+  Bookmark(),
+  Settings(),
 ];
 
 class HomeScreenWidget extends StatefulWidget {
@@ -20,10 +32,11 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.account_circle),
-          iconSize: 30.0,
-          onPressed: () {},
+        leading: Padding(padding:EdgeInsets.all(8),
+        child:CircleAvatar(
+            backgroundImage:
+            AssetImage("images/nepal1.jpg"),
+      ),
         ),
         title: Text(
           "Namaskar",
@@ -42,18 +55,13 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
                 onPressed: () {},
               )),
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.more_vert),
             iconSize: 30.0,
             onPressed: () {},
           ),
         ],
       ),
-      body:SafeArea(child:ListView(
-        children: <Widget>[
-          Home(),EventsAndPlaces()
-        ],
-      ),
-      ),
+      body:tabs[_currentTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
         onTap:(value) {
@@ -78,10 +86,7 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
             title: Text("Bookmarks"),backgroundColor: Colors.indigo,
           ),
           BottomNavigationBarItem(
-            icon:IconButton(icon: Icon(Icons.settings,size: 25.0,color: Colors.white,), onPressed: (){ Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Scaffold(body: Settings(),)),
-            );},
+            icon:IconButton(icon: Icon(Icons.settings,size: 25.0,color: Colors.white,),
             ),
             title: Text("Settings"),backgroundColor: Colors.indigo,
           ),

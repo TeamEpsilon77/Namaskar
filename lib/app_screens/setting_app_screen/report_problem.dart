@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:namaskar_app/app_screens/setting_screen.dart';
+import 'package:namaskar_app/app_screens/widgets/home_screen_widget.dart';
 
 class ReportProblem extends StatefulWidget {
   @override
@@ -16,9 +17,8 @@ class ReportProblemState extends State<ReportProblem> {
         appBar: AppBar(leading: IconButton(
           icon: Icon(Icons.arrow_back),
           iconSize: 30.0,
-          onPressed: (){ Navigator.push(
+          onPressed: (){ Navigator.pop(
             context,
-            MaterialPageRoute(builder: (context) => Settings()),
           );},),
           title: Text(
             "Report a Problem",

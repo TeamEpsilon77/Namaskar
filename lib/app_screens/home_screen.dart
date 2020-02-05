@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/events_close_to_you_screen.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';
+import 'package:namaskar_app/app_screens/places_close_to_you.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -130,9 +132,12 @@ class EventsAndPlaces extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: upComing.length,
               itemBuilder: (BuildContext context, int index) {
+                Event upcoming = upComing[index];
                 return GestureDetector(
-                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=> Settings(),)),
-                    child: Container(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>EventScreen(upcoming: upcoming)));
+                    },
+                    child:Container(
                         margin: EdgeInsets.all(10.0),
                         width: 200.0,
                         child: Stack(
@@ -226,11 +231,14 @@ class EventsAndPlaces extends StatelessWidget {
             child: ListView.builder(
               padding: EdgeInsets.only(left: 8.0),
               scrollDirection: Axis.horizontal,
-              itemCount: upComing.length,
+              itemCount: near.length,
               itemBuilder: (BuildContext context, int index) {
+                Places around = near[index];
                 return GestureDetector(
-                 onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>Settings())),
-                  child: Container(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>PlaceScreen(around: around)));
+                  },
+                  child:Container(
                     margin: EdgeInsets.all(10.0),
                     width: 200.0,
                     child: Stack(
@@ -273,9 +281,9 @@ class EventsAndPlaces extends StatelessWidget {
                               ]),
                           child: Stack(
                             children: <Widget>[
-                              ClipRRect(
+                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
-                                child: Image(
+                                 child: Image(
                                   height: 180.0,
                                   width: 200.0,
                                   image: AssetImage(near[index].imageUrl),
@@ -287,8 +295,7 @@ class EventsAndPlaces extends StatelessWidget {
                         ),
                       ],
                 )
-                  ),
-                );
+                  ),);
               },
             ),
           ),
