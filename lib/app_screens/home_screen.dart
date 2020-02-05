@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
-import 'package:namaskar_app/app_screens/setting.dart';
+import 'package:namaskar_app/app_screens/setting_screen.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -131,7 +131,7 @@ class EventsAndPlaces extends StatelessWidget {
               itemCount: upComing.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
-                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=> ContainerOfSetting(),)),
+                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=> Settings(),)),
                     child: Container(
                         margin: EdgeInsets.all(10.0),
                         width: 200.0,
@@ -229,7 +229,7 @@ class EventsAndPlaces extends StatelessWidget {
               itemCount: upComing.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
-                 onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>ContainerOfSetting())),
+                 onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>Settings())),
                   child: Container(
                     margin: EdgeInsets.all(10.0),
                     width: 200.0,
