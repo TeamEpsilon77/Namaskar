@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:namaskar_app/app_screens/event_detail_screen.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
 
 class EventScreen extends StatefulWidget{
   final Event upcoming;
-  EventScreen({this.upcoming});
+  EventScreen({this.upcoming,});
   @override
   State<StatefulWidget> createState() {
     return EventScreenState();
@@ -109,7 +110,7 @@ class EventScreenState extends State<EventScreen>
             height: 45.0,
             width: 500.0,
             padding: EdgeInsets.all(7.0),
-            child:  Text(widget.upcoming.name,
+            child:  Text("Welcome to "+widget.upcoming.name,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 30.0,
@@ -118,12 +119,51 @@ class EventScreenState extends State<EventScreen>
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      Text(widget.upcoming.star,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 22,
+                          letterSpacing: 0.27,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      IconButton(
+                          icon:Icon(Icons.favorite,
+                            color: Colors.grey,
+                            size: 22,)
+
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(padding: EdgeInsets.only(left:30.0,right:30.0),
+              child:ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    Event detail = upComing[index];
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => EventDetail(detail: detail,)));
+                      },
+                    );
+                  }
+              ),
+          ),
           Container(
-            padding: EdgeInsets.all(7.0),
+            padding: EdgeInsets.only(top:15.0,left: 8.0,right: 7.0,bottom: 8.0),
             child:Text(widget.upcoming.description,
             style: TextStyle(
-              color: Colors.black,
-              fontSize: 25.0,
+              color: Colors.grey,
+              fontSize: 20.0,
             ),
           ),)
         ],

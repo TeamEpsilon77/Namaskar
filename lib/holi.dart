@@ -144,7 +144,7 @@ class _MyAppState extends State<HomeScreen>
                             padding: const EdgeInsets.only(
                                 top: 32.0, left: 18, right: 16),
                             child: Text(
-                              'Welcome to Shivaratri',
+                              'Welcome to MahaShivaratri',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -161,33 +161,23 @@ class _MyAppState extends State<HomeScreen>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text(
-                                  'Pashupatinath',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 22,
-                                    letterSpacing: 0.27,
-                                    color: Colors.blueGrey,
-                                  ),
-                                ),
                                 Container(
                                   child: Row(
                                     children: <Widget>[
                                       Text(
                                         '4.3',
-                                        textAlign: TextAlign.left,
                                         style: TextStyle(
-                                          fontWeight: FontWeight.w200,
+                                          fontWeight: FontWeight.w400,
                                           fontSize: 22,
                                           letterSpacing: 0.27,
                                           color: Colors.grey,
                                         ),
                                       ),
-                                      Icon(
-                                        Icons.star,
+                                      IconButton(
+                                          icon:Icon(Icons.star,
                                         color: Colors.grey,
-                                        size: 24,
+                                        size: 24,)
+
                                       ),
                                     ],
                                   ),
@@ -199,11 +189,12 @@ class _MyAppState extends State<HomeScreen>
                             duration: const Duration(milliseconds: 500),
                             opacity: opacity1,
                             child: Padding(
-                              padding: const EdgeInsets.all(8),
+                              padding:EdgeInsets.all(8),
                               child: Row(
                                 children: <Widget>[
-                                  getTimeBoxUI('21 Feb 2019',''),
+                                  getTimeBoxUI('Falgun 9, 2075)',''),
                                   getTimeBoxUI('Explore the\n Culture', ''),
+                                  Expanded(child: getTimeBoxUI('Visit', '')),
                                 ],
                               ),
                             ),

@@ -104,10 +104,10 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
             ],
           ),
           Container(
-            height: 45.0,
+            height: 42.0,
             width: 500.0,
             padding: EdgeInsets.all(7.0),
-            child:  Text(widget.around.name,
+            child:  Text("Welcome to "+widget.around.name,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 30.0,
@@ -116,12 +116,52 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(left:18.0),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      Text(widget.around.star,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 22,
+                          letterSpacing: 0.27,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      IconButton(
+                          icon:Icon(Icons.star,
+                            color: Colors.grey,
+                            size: 22,)
+
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
           Container(
-            padding: EdgeInsets.all(7.0),
+               padding: EdgeInsets.only(left:50.0,right:50.0),
+           child: RaisedButton(
+                      color: Colors.indigo,
+                      onPressed: (){
+                      },
+                      child: Row(children: <Widget>[
+                        IconButton(icon: Icon(Icons.public,size: 30,color: Colors.white,),),
+                        Text("View "+widget.around.name+" on map",
+                          style: TextStyle(fontSize:16,color: Colors.white,letterSpacing: 0.65),),
+                       ],)
+                    )
+            ),
+          Container(
+            padding: EdgeInsets.only(top:15.0,left: 8.0,right: 7.0,bottom: 8.0),
             child:Text(widget.around.description,
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 25.0,
+                color: Colors.grey,
+                fontSize: 20.0,
               ),
             ),)
         ],

@@ -106,7 +106,7 @@ class EventsAndPlaces extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Events Close to You',
+                  'Festivals & Events',
                   style: TextStyle(
                     color: Colors.blueGrey,
                     fontSize: 18.0,
@@ -135,7 +135,7 @@ class EventsAndPlaces extends StatelessWidget {
                 Event upcoming = upComing[index];
                 return GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>EventScreen(upcoming: upcoming)));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>EventScreen(upcoming: upcoming,)));
                     },
                     child:Container(
                         margin: EdgeInsets.all(10.0),
