@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/location_services/map_screen.dart';
 
 class PlaceScreen extends StatefulWidget{
   final Places around ;
@@ -47,6 +48,21 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(leading:IconButton(
+        icon: Icon(Icons.arrow_back),
+        iconSize: 30.0,
+        onPressed: (){ Navigator.pop(
+          context,
+        );},),
+        title: Text(
+         widget.around.name,
+          style: TextStyle(
+            fontSize: 25.0,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.indigo,
+      ),
       body: ListView(
         children: <Widget>[
           Stack(
@@ -67,14 +83,6 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left:10.0,top: 20.0),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back,color: Colors.indigo,),
-                  iconSize: 30.0,
-                  onPressed: (){ Navigator.pop(
-                    context,
-                  );},),),
               Positioned(
                 top: (MediaQuery.of(context).size.width / 1.2) - 10.0 - 10,
                 right: 20,
@@ -83,7 +91,7 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
                   scale: CurvedAnimation(
                       parent: animationController, curve: Curves.fastOutSlowIn),
                   child: Card(
-                    color: Colors.blue.shade900,
+                    color: Colors.indigo,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0)),
                     elevation: 10.0,
@@ -148,6 +156,7 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
            child: RaisedButton(
                       color: Colors.indigo,
                       onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder:(_)=>MapScreen()));
                       },
                       child: Row(children: <Widget>[
                         IconButton(icon: Icon(Icons.public,size: 30,color: Colors.white,),),

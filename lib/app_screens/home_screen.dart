@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
 import 'package:namaskar_app/app_screens/events_close_to_you_screen.dart';
+import 'package:namaskar_app/app_screens/nepali%20date.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';
 import 'package:namaskar_app/app_screens/places_close_to_you.dart';
 
 class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return body();
-  }
+@override
+Widget build(BuildContext context) {
+  return body();
+}
 } //class
 
 Widget body() {
@@ -28,28 +29,28 @@ Widget body() {
                     padding: EdgeInsets.all(3.0),
                     color: Colors.indigo,
                     child: Text(
-                      "Falgun 2076",
+                      getYearAndMonth(),
                       style: TextStyle(fontSize: 25.0, color: Colors.white),
                     )),
                 Container(
                     padding: EdgeInsets.all(3.0),
                     color: Colors.indigo,
                     child: Text(
-                      "18",
+                      getDay(),
                       style: TextStyle(fontSize: 60.0, color: Colors.white),
                     )),
                 Container(
                     padding: EdgeInsets.all(3.0),
                     color: Colors.indigo,
                     child: Text(
-                      "Saturday",
+                      getWeekDay(),
                       style: TextStyle(fontSize: 25.0, color: Colors.white),
                     )),
                 Container(
                     padding: EdgeInsets.all(3.0),
                     color: Colors.indigo,
                     child: Text(
-                      "February 1, 2020",
+                      getAD(),
                       style: TextStyle(fontSize: 20.0, color: Colors.white),
                     )),
               ],
@@ -77,18 +78,6 @@ Widget body() {
         ),
       ],
     )),
-    Container(
-      padding: EdgeInsets.all(10.0),
-      child: Text(
-        '"Welcome to Lalitpur"',
-        style: TextStyle(
-          fontSize: 40.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    ),
   ]);
   return column;
 }

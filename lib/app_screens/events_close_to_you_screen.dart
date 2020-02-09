@@ -50,6 +50,21 @@ class EventScreenState extends State<EventScreen>
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(leading:IconButton(
+        icon: Icon(Icons.arrow_back),
+        iconSize: 30.0,
+        onPressed: (){ Navigator.pop(
+          context,
+        );},),
+        title: Text(
+          widget.upcoming.name,
+          style: TextStyle(
+            fontSize: 25.0,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.indigo,
+      ),
       body: ListView(
         children: <Widget>[
           Stack(
@@ -70,14 +85,6 @@ class EventScreenState extends State<EventScreen>
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left:10.0,top: 20.0),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back,color: Colors.indigo,),
-                  iconSize: 30.0,
-                  onPressed: (){ Navigator.pop(
-                    context,
-                  );},),),
               Positioned(
                 top: (MediaQuery.of(context).size.width / 1.2) - 10.0 - 10,
                 right: 20,
@@ -86,7 +93,7 @@ class EventScreenState extends State<EventScreen>
                   scale: CurvedAnimation(
                       parent: animationController, curve: Curves.fastOutSlowIn),
                   child: Card(
-                    color: Colors.blue.shade900,
+                    color: Colors.indigo,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0)),
                     elevation: 10.0,
@@ -146,18 +153,17 @@ class EventScreenState extends State<EventScreen>
               ],
             ),
           ),
-          Container(padding: EdgeInsets.only(left:30.0,right:30.0),
-              child:ListView.builder(
-                  itemBuilder: (BuildContext context, int index) {
-                    Event detail = upComing[index];
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_) => EventDetail(detail: detail,)));
-                      },
-                    );
-                  }
+          Padding(padding: EdgeInsets.only(left:30.0,right:30.0),
+             child:RaisedButton(
+                  color: Colors.indigo,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>EventDetail(detail:Event(id:1)),));
+                  },
+                     child:Text("Events of "+widget.upcoming.name,
+                      style: TextStyle(fontSize:16,color: Colors.white,letterSpacing: 0.65),),
+                  ),
               ),
-          ),
+
           Container(
             padding: EdgeInsets.only(top:15.0,left: 8.0,right: 7.0,bottom: 8.0),
             child:Text(widget.upcoming.description,

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/bookmark_screen.dart';
 import 'package:namaskar_app/app_screens/event_model.dart';
 import 'package:namaskar_app/app_screens/home_screen.dart';
+import 'package:namaskar_app/app_screens/searchScreen.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';
 import 'package:namaskar_app/app_screens/notification_screen.dart';
 import 'package:namaskar_app/holi.dart';
+import 'package:namaskar_app/location_services/map_screen.dart';
 
 
 int _currentTab = 0;
@@ -52,7 +54,9 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
               child: IconButton(
                 icon: Icon(Icons.search),
                 iconSize: 30.0,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>Search()));
+                },
               )),
           IconButton(
             icon: Icon(Icons.more_vert),
@@ -62,6 +66,13 @@ class HomeScreenWidgetState extends State<HomeScreenWidget> {
         ],
       ),
       body:tabs[_currentTab],
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder:(_)=>MapScreen()));
+        },
+        child: Icon(Icons.my_location,size: 30,color: Colors.grey,),
+        backgroundColor: Colors.white,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
         onTap:(value) {

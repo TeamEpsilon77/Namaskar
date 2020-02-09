@@ -14,6 +14,7 @@ class EventDetailState extends State<EventDetail>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Text("Welcome to "+widget.detail.name),
     );
   }
 
