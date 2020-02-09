@@ -23,7 +23,7 @@ class MapScreenState extends State<MapScreen> {
   void _onMapCreated(GoogleMapController _cntrl){
     _controller = _cntrl;
     _location.onLocationChanged().listen((l){
-      _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(l.latitude,l.longitude),zoom: 18)));
+      _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(l.latitude,l.longitude),zoom: 14)));
     });
   }
   @override
@@ -47,7 +47,7 @@ class MapScreenState extends State<MapScreen> {
       body: Stack(
         children: <Widget>[
           GoogleMap(
-           initialCameraPosition: CameraPosition(target: _initialPosition,zoom: 15),
+           initialCameraPosition: CameraPosition(target: _initialPosition,zoom: 14),
             onMapCreated: _onMapCreated,
             myLocationEnabled: true,
           ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:namaskar_app/app_screens/event_detail_screen.dart';
@@ -46,6 +47,7 @@ class EventScreenState extends State<EventScreen>
       opacity3 = 1.0;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -153,16 +155,18 @@ class EventScreenState extends State<EventScreen>
               ],
             ),
           ),
+
           Padding(padding: EdgeInsets.only(left:30.0,right:30.0),
              child:RaisedButton(
-                  color: Colors.indigo,
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>EventDetail(detail:Event(id:1)),));
-                  },
-                     child:Text("Events of "+widget.upcoming.name,
-                      style: TextStyle(fontSize:16,color: Colors.white,letterSpacing: 0.65),),
-                  ),
+               color: Colors.indigo,
+               onPressed: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (_)=>EventDetail(detail: widget.upcoming,)));
+               },
+               child:Text("Events of "+widget.upcoming.name,
+                 style: TextStyle(fontSize:16,color: Colors.white,letterSpacing: 0.65),),
+             ),
               ),
+
 
           Container(
             padding: EdgeInsets.only(top:15.0,left: 8.0,right: 7.0,bottom: 8.0),

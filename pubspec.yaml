@@ -31,6 +31,7 @@ dependencies:
   google_maps_flutter: ^0.5.21
   geolocator: ^5.2.0
   location: ^2.3.5
+  nepali_date_picker: ^3.2.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

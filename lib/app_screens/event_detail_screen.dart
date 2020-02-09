@@ -14,7 +14,21 @@ class EventDetailState extends State<EventDetail>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Welcome to "+widget.detail.name),
+      appBar: AppBar(leading:IconButton(
+        icon: Icon(Icons.arrow_back),
+        iconSize: 30.0,
+        onPressed: (){ Navigator.pop(
+          context,
+        );},),
+        title: Text(
+          "Events of "+widget.detail.name,
+          style: TextStyle(
+            fontSize: 25.0,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.indigo,
+      ),
     );
   }
 

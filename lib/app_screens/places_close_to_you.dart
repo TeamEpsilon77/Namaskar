@@ -152,7 +152,7 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
             ),
           ),
           Container(
-               padding: EdgeInsets.only(left:50.0,right:50.0),
+               padding: EdgeInsets.only(left:45.0,right:45.0),
            child: RaisedButton(
                       color: Colors.indigo,
                       onPressed: (){
