@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:namaskar_app/app_screens/event_detail_screen.dart';
-import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/eventAndPlacesModel.dart';
 
 class EventScreen extends StatefulWidget{
   final Event upcoming;
@@ -72,20 +73,17 @@ class EventScreenState extends State<EventScreen>
           Stack(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      offset: Offset(0.0, 2.0),
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child:Image(
-                  image: AssetImage(widget.upcoming.imageUrl),
-                  fit: BoxFit.cover,
-                ),
+                  height: 280,
+                  child:Carousel(
+                    boxFit: BoxFit.fill,
+                    images: [
+                      AssetImage(widget.upcoming.imageUrl),
+                      AssetImage(widget.upcoming.imageUrl1),
+                      AssetImage(widget.upcoming.imageUrl2),
+                    ],
+                    dotSpacing: 10.0,
+                    dotSize: 1.0,
+                  )
               ),
               Positioned(
                 top: (MediaQuery.of(context).size.width / 1.2) - 10.0 - 10,

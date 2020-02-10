@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_screens/event_model.dart';
+import 'app_screens/eventAndPlacesModel.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

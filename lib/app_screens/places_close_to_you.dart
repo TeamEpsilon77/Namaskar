@@ -1,5 +1,7 @@
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/eventAndPlacesModel.dart';
 import 'package:namaskar_app/location_services/map_screen.dart';
 
 class PlaceScreen extends StatefulWidget{
@@ -44,7 +46,6 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
       opacity3 = 1.0;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -65,54 +66,24 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
       ),
       body: ListView(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      offset: Offset(0.0, 2.0),
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child:Image(
-                  image: AssetImage(widget.around.imageUrl),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: (MediaQuery.of(context).size.width / 1.2) - 10.0 - 10,
-                right: 20,
-                child: ScaleTransition(
-                  alignment: Alignment.center,
-                  scale: CurvedAnimation(
-                      parent: animationController, curve: Curves.fastOutSlowIn),
-                  child: Card(
-                    color: Colors.indigo,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)),
-                    elevation: 10.0,
-                    child: Container(
-                      width: 60,
-                      height: 60,
-                      child: Center(
-                        child: Icon(
-                          Icons.favorite,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
           Container(
-            height: 42.0,
+          height: 250,
+          child:Carousel(
+            boxFit: BoxFit.fill,
+            images: [
+              AssetImage(widget.around.imageUrl),
+              AssetImage(widget.around.imageUrl1),
+              AssetImage(widget.around.imageUrl2),
+              AssetImage(widget.around.imageUrl3),
+              AssetImage(widget.around.imageUrl4),
+            ],
+            dotSpacing: 10.0,
+            dotSize: 1.0,
+          )
+      ),
+
+          Container(
+            height: 48.0,
             width: 500.0,
             padding: EdgeInsets.all(7.0),
             child:  Text("Welcome to "+widget.around.name,
@@ -152,7 +123,7 @@ class PlaceScreenState extends State<PlaceScreen>  with TickerProviderStateMixin
             ),
           ),
           Container(
-               padding: EdgeInsets.only(left:45.0,right:45.0),
+               padding: EdgeInsets.only(left:35.0,right:30.0),
            child: RaisedButton(
                       color: Colors.indigo,
                       onPressed: (){

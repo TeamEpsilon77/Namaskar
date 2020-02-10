@@ -50,18 +50,43 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/jatra.png
-    - images/Gyalpo_lhosar.jpg
+    - images/gyal1.jpg
+    - images/gyal2.jpg
+    - images/gyal3.jpg
     - images/Holi.jpg
+    - images/holi1.jpg
+    - images/holi2.jpg
     - images/Ramnawami.jpeg
+    - images/ram1.jpg
+    - images/ram2.jpg
     - images/Ghodejatra.jpg
-    - images/banglamukhi.jpg
+    - images/gh1.jpg
+    - images/gh2.jpg
+    - images/swyam.jpg
+    - images/swyam1.jpg
+    - images/swyam2.jpg
+    - images/swyam3.jpg
+    - images/swyam4.jpg
     - images/basantapur.jpg
+    - images/bas1.jpg
+    - images/bas2.jpeg
+    - images/bas3.jpg
+    - images/bas4.jpg
     - images/boudhanath.jpg
-    - images/pas.png
+    - images/bou1.jpeg
+    - images/bou2.jpg
+    - images/bou3.jpg
+    - images/bou4.jpg
     - images/patan.jpeg
-    - images/Shivaratri.jpg
+    - images/patan1.jpg
+    - images/patan2.jpg
+    - images/patan3.jpg
+    - images/patan4.jpeg
+    - images/shiva2.jpg
+    - images/shiva3.jpg
+    - images/shiva4.jpg
     - images/nepal1.jpg
+    - images/pas.png
     - images/pas1.jpg
     - images/pas2.jpeg
     - images/pas3.jpg

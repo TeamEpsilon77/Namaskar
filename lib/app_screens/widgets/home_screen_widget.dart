@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaskar_app/app_screens/bookmark_screen.dart';
-import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/eventAndPlacesModel.dart';
 import 'package:namaskar_app/app_screens/home_screen.dart';
 import 'package:namaskar_app/app_screens/searchScreen.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';

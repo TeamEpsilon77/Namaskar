@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/eventAndPlacesModel.dart';
 
 class EventDetail extends StatefulWidget{
   final Event detail;

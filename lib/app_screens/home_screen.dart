@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:namaskar_app/app_screens/event_model.dart';
+import 'package:namaskar_app/app_screens/eventAndPlacesModel.dart';
 import 'package:namaskar_app/app_screens/events_close_to_you_screen.dart';
 import 'package:namaskar_app/app_screens/nepali%20date.dart';
 import 'package:namaskar_app/app_screens/setting_screen.dart';

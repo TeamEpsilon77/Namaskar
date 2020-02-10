@@ -23,7 +23,7 @@ class MapScreenState extends State<MapScreen> {
   void _onMapCreated(GoogleMapController _cntrl){
     _controller = _cntrl;
     _location.onLocationChanged().listen((l){
-      _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(l.latitude,l.longitude),zoom: 14)));
+      _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(l.latitude,l.longitude),zoom: 12)));
     });
   }
   @override
@@ -47,7 +47,7 @@ class MapScreenState extends State<MapScreen> {
       body: Stack(
         children: <Widget>[
           GoogleMap(
-           initialCameraPosition: CameraPosition(target: _initialPosition,zoom: 14),
+            initialCameraPosition: CameraPosition(target: _initialPosition,zoom: 12),
             onMapCreated: _onMapCreated,
             myLocationEnabled: true,
           ),
@@ -65,13 +65,13 @@ class MapScreenState extends State<MapScreen> {
               ),
               child: TextField(
                   decoration: InputDecoration(
-                    hintText: 'Search Address on Map',
+                    hintText: 'Search Address',
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.only(left: 15.0, top: 15.0),
                     suffixIcon: IconButton(
-                        icon: Icon(Icons.search),
-                          onPressed: barSearch,
-                          iconSize: 30.0,padding: EdgeInsets.all(5.0),
+                      icon: Icon(Icons.search),
+                      onPressed: barSearch,
+                      iconSize: 30.0,padding: EdgeInsets.all(5.0),
                     ),
                   ),
                   onChanged: (val) {
@@ -92,7 +92,7 @@ class MapScreenState extends State<MapScreen> {
       mapController.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
           target:
           LatLng(result[0].position.latitude, result[0].position.longitude),
-          zoom: 15.0)));
+          zoom: 12.0)));
     });
   }
 
