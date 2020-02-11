@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">676770435661-krhma15f79429tdf314q8qhs1du6t0po.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://namaskar-epsilon.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">676770435661</string>
+    <string name="google_api_key" translatable="false">AIzaSyAPYw8GKOQqwwAxTNX6dGYwJo4plpdSIj8</string>
+    <string name="google_app_id" translatable="false">1:676770435661:android:888b474297d0b9a25b4204</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAPYw8GKOQqwwAxTNX6dGYwJo4plpdSIj8</string>
+    <string name="google_storage_bucket" translatable="false">namaskar-epsilon.appspot.com</string>
+    <string name="project_id" translatable="false">namaskar-epsilon</string>
+</resources>
